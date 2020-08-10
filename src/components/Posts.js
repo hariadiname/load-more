@@ -12,11 +12,9 @@ export default class Posts extends Component {
     this.loadMore = this.loadMore.bind(this);
   }
 
-  URL_LPTQ = "http://api.lptqpapua.org/api/portal/post?";
-
   componentDidMount() {
     Axios.get(
-      `${this.URL_LPTQ}page=${this.state.page}&limit=${this.state.limit}`
+      `${process.env.REACT_APP_URL_API}/post?page=${this.state.page}&limit=${this.state.limit}`
     )
       .then((res) => {
         this.setState({
