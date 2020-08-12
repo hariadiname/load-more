@@ -32,7 +32,7 @@ export default class Posts extends Component {
     });
 
     Axios.get(
-      `${this.URL_LPTQ}page=${this.state.page}&limit=${this.state.limit}`
+      `${process.env.REACT_APP_URL_API}/post?page=${this.state.page}&limit=${this.state.limit}`
     )
       .then((res) => {
         this.setState({
